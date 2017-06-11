@@ -17,5 +17,9 @@
   <ItemGroup>
     <None Include="MQTT_ESP8266.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.MQTT_ESP8266.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
