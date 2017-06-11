@@ -1,9 +1,4 @@
-#### Notice i am going to stop feature development on this fork.
-#### Instead i am going to go back and re fork the original FSBrowserNG adn add feature to extend http functionality with callback to top level .ino code so that projected based page customization is possible without editing FSWebServerLib.cpp 
-
-
-
-A fork from https://github.com/gmag11/FSBrowserNG
+A manual fork from https://github.com/gmag11/FSBrowserNG
 with update to support MQTT and various sensors and i/o functionaly 
 
 #FSBrowserNG
