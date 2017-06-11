@@ -1,0 +1,35 @@
+MQTT topics
+See FULL MQTT Topic on MQTT page
+Control topic is set on mqtt page
+Middle bit is device name + part of MAC address
+For Input pin 1 in my example , subscribe to   /control/leeW_9BDD/pin1
+If F in mode, which counts edges so 2 * hz, not hz
+subscribe to   /control/leeW_9BDD/pin1_T for pulse Count
+publish to /control/leeW_9BDD/pin1_T to reset counter
+
+
+/control/leeW_9BDD/pin1 will be freq updated every interval if different from last reading
+Input pin 2 in my example is  /control/leeW_9BDD/pin2
+Relay 1 topic is /control/leeW_9BDD/pin3 message is 1 for on, 0 for off
+Confirmation can be read by subscribing to /control/leeW_9BDD/pin2_C
+Relay 2 topic is /control/leeW_9BDD/pin4 message is 1 for on, 0 for off
+Confirmation can be read by subscribing to /control/leeW_9BDD/pin4_C
+
+Timeout can be set (or over ridden)  by message like 1:10, where a 10 seconds time out will take place
+
+
+Subscribe  to /control/leeW_9BDD/LWT to get device status, 
+LWT is Last Will , if the device losses connect the broker will send “DOWN” as a last message
+
+When publishing  messages to the device, setting a RETAINED message will define boot up state of the device
+
+Analog pin id 3v3 max and scale 0 to 1024
+Subscribe  to /control/leeW_9BDD/APIN to get device status, 
+
+Temp and humidity from sensor if fitterd, subscribe to 
+/control/LeeW_9BDD/rawTempC, last reading from sensor
+/control/LeeW_9BDD/rawHumidity,  last reading from sensor
+/control/LeeW_9BDD/filterTempC, filtered by 1/4 impulse reposonse filter (configuration on global.h)
+/control/LeeW_9BDD/filterHumidity, filtered by 1/4 impulse reposonse filter
+
+

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<a href="admin.html"  class="btn btn--s"><</a>&nbsp;&nbsp;<strong>MQTT Settings</strong>
+<hr>
+<form action="" method="get">
+<table border="0"  cellspacing="0" cellpadding="3" >
+
+<tr><td align="right">MQTT Enable:</td><td><input type="checkbox" id="en" name="en"></td></tr>
+<tr><td align="right">MQTT Host:</td><td><input type="text" ID="Host" name="Host" maxlength="32" value=""></td></tr>
+<tr><td align="right">MQTT Port:</td><td><input type="text" ID="Port" name="Port" maxlength="32" value=""></td></tr>
+<tr><td align="right">MQTT User:</td><td><input type="text" ID="User" name="User" maxlength="5" value=""></td></tr>
+<tr><td align="right">MQTT Pass:</td><td><input type="text" ID="Pass" name="Pass" maxlength="32" value=""></td></tr>
+<tr><td align="right">MQTT Topic Root:</td><td><input type="text" ID="topic" name="topic" maxlength="32" value=""></td></tr>
+<tr><td align="right" colspan="2">Topic Root is useD with DeviceName create MQTT topic path</td></tr>
+<tr><td align="right">Full MQTT Topic:</td><td><span id="ftopic"></span></td></tr>
+<tr><td align="right">Update Interval:</td><td><input type="text" ID="upd" name="upd" maxlength="32" value=""></td></tr>
+
+
+<tr><td colspan="2" align="center"><input type="submit" style="width:150px" class="btn btn--m btn--blue" value="Save"></td></tr>
+</table>
+</form>
+<script>
+	
+
+window.onload = function ()
+{
+	load("style.css","css", function() 
+	{
+		load("microajax.js","js", function() 
+		{
+				setValues("/admin/mqttvalues");
+		});
+	});
+}
+function load(e,t,n){if("js"==t){var a=document.createElement("script");a.src=e,a.type="text/javascript",a.async=!1,a.onload=function(){n()},document.getElementsByTagName("head")[0].appendChild(a)}else if("css"==t){var a=document.createElement("link");a.href=e,a.rel="stylesheet",a.type="text/css",a.async=!1,a.onload=function(){n()},document.getElementsByTagName("head")[0].appendChild(a)}}
+
+
+
+</script>

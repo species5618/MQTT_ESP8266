@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<a href="admin.html" class="btn btn--s">&lt;</a>&nbsp;&nbsp;<strong>General Settings</strong>
+<hr>
+<form action="" method="post">
+    <table border="0" cellspacing="0" cellpadding="3">
+        <tr>
+            <td align="right">Name of Device</td>
+            <td>
+                <input type="text" id="devicename" name="devicename" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">Pin 1 mode (in1)</td>
+            <td>
+                <select id="in1" name="in1">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Pin 2 mode (in2)</td>
+            <td>
+                <select id="in2" name="in2">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Pin 3 mode (out1)</td>
+            <td>
+                <select id="out1" name="out1">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td align="right">Pin 3 Time (0 is disable):</td><td><input type="text" ID="pin3t" name="pin3t" maxlength="32" value=""></td></tr>
+        <tr>
+            <td align="right">Pin 4 mode (out2)</td>
+            <td>
+                <select id="out2" name="out2">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td align="right">Pin 4 Time (0 is disable):</td><td><input type="text" ID="pin4t" name="pin4t" maxlength="32" value=""></td></tr>
+
+        <tr>
+            <td align="right">Pin 5 mode (JP1)</td>
+            <td>
+                <select id="pin1" name="pin1">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Pin 6 mode (JP2)</td>
+            <td>
+                <select id="pin2" name="pin2">
+                    <option value="1">Out</option>
+                    <option value="3">PWM</option>
+                    <option value="0">In</option>
+                    <option value="2">F-In</option>
+                    <option value="4">DHT11</option>
+                    <option value="6">DHT22</option>
+                    <option value="10">Dallas Temp</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td align="right">PWM Freq:</td><td><input type="text" ID="pwmf" name="pwmf" maxlength="32" value=""></td></tr>
+
+        <tr><td align="right">A Pin Enable:</td><td><input type="checkbox" id="en" name="en"></td></tr>
+
+        <tr><td colspan="2" align="center"><input type="submit" style="width:150px" class="btn btn--m btn--blue" value="Save"></td></tr>
+
+    </table>
+</form>
+<script>
+
+
+
+			window.onload = function ()
+			{
+				load("style.css","css", function()
+				{
+					load("microajax.js","js", function()
+					{
+						setValues("/admin/generalvalues");
+					});
+				});
+			}
+			function load(e, t, n) {
+				if ("js" == t) {
+					var a = document.createElement("script");
+					a.src = e, a.type = "text/javascript",
+					a.async = !1,
+					a.onload = function () {
+						n()
+					},
+					document.getElementsByTagName("head")[0].appendChild(a)
+				} else if ("css" == t) {
+					var a = document.createElement("link");
+					a.href = e, a.rel = "stylesheet", a.type = "text/css",
+					a.async = !1,
+					a.onload = function () {
+						n()
+					},
+					document.getElementsByTagName("head")[0].appendChild(a)
+				}
+			}
+
+</script>
